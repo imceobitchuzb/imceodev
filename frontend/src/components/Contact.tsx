@@ -105,15 +105,45 @@ export const Contact: React.FC<ContactProps> = ({ initialService = '' }) => {
 
     setLoading(true);
 
-    const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:5000';
+    const isLocalhost =
+      typeof window !== 'undefined' &&
+      (window.location.hostname === 'localhost' ||
+        window.location.hostname === '127.0.0.1' ||
+        window.location.hostname.endsWith('.local'));
+
+    const rawEnvUrl = import.meta.env.VITE_API_BASE_URL || '';
+    const hasValidRemoteUrl =
+      Boolean(rawEnvUrl) &&
+      !rawEnvUrl.includes('127.0.0.1') &&
+      !rawEnvUrl.includes('localhost');
+
+    let apiBaseUrl = '';
+    if (hasValidRemoteUrl) {
+      apiBaseUrl = rawEnvUrl;
+    } else if (isLocalhost) {
+      apiBaseUrl = rawEnvUrl || 'http://127.0.0.1:5000';
+    }
+
+    if (!apiBaseUrl) {
+      setLoading(false);
+      setErrorMessage(
+        'The cloud backend API is currently in deployment. You can reach out directly via Telegram: @imceouz (link on the left).'
+      );
+      return;
+    }
+
     const endpoint = `${apiBaseUrl.replace(/\/+$/, '')}/api/contact`;
 
     try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 20000);
+
       const response = await fetch(endpoint, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
+        signal: controller.signal,
         body: JSON.stringify({
           name: formData.name.trim(),
           email: formData.email.trim(),
@@ -124,6 +154,8 @@ export const Contact: React.FC<ContactProps> = ({ initialService = '' }) => {
           website: formData.website, // Honeypot
         }),
       });
+
+      clearTimeout(timeoutId);
 
       const data = await response.json().catch(() => null);
 
@@ -152,7 +184,12 @@ export const Contact: React.FC<ContactProps> = ({ initialService = '' }) => {
         consent: false,
       });
     } catch (err: unknown) {
-      const errStr = err instanceof Error ? err.message : 'Unable to connect to the backend server. Please verify your connection or message directly via Telegram.';
+      const errStr =
+        err instanceof Error
+          ? err.name === 'AbortError'
+            ? 'Request timed out. The backend server might be waking up from sleep. Please try once more in 15 seconds or message directly on Telegram.'
+            : err.message
+          : 'Unable to connect to the backend server. Please verify your connection or message directly via Telegram.';
       setErrorMessage(errStr);
     } finally {
       setLoading(false);

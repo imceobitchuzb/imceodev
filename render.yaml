@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: imceodev-api
+    runtime: python
+    region: frankfurt
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: FLASK_DEBUG
+        value: "0"
+      - key: CORS_ORIGINS
+        value: https://imceodev.netlify.app,http://localhost:5173,http://127.0.0.1:5173
+      - key: DATABASE_PATH
+        value: contact_submissions.db
+      - key: SECRET_KEY
+        generateValue: true
