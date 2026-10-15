@@ -13,6 +13,17 @@ import { Footer } from './components/Footer';
 export const MainContent: React.FC = () => {
   const [selectedService, setSelectedService] = useState<string>('');
 
+  React.useEffect(() => {
+    if (window.location.hash) {
+      const target = document.querySelector(window.location.hash);
+      if (target) {
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, []);
+
   const handleSelectService = (serviceName: string) => {
     setSelectedService(serviceName);
     const contactElement = document.querySelector('#contact');

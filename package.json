@@ -1,0 +1,11 @@
+{
+  "name": "imceodev",
+  "private": true,
+  "description": "IMCEO DEV software development studio website and API",
+  "scripts": {
+    "build": "npm run build --prefix frontend",
+    "test": "npm test --prefix frontend",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "dev:backend": "cd backend && python app.py"
+  }
+}
