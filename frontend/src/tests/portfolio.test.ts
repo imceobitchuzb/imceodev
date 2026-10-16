@@ -10,7 +10,7 @@ describe('IMCEO DEV Data and Business Logic Tests', () => {
     expect(ids).toContain('nexora-market');
     expect(ids).toContain('ceoweb-social');
     expect(ids).toContain('sat-master');
-    expect(ids).toContain('telegram-automation-engine');
+    expect(ids).toContain('ceosavdo-uz');
   });
 
   it('should correctly filter projects by category', () => {

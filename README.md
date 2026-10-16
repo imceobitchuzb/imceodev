@@ -28,7 +28,7 @@ This repository contains the complete full-stack codebase:
      - **NEXORA MARKET**: Live web store ([nexoramarketss.netlify.app](https://nexoramarketss.netlify.app)) + active Telegram Bot ([@nexoramarketsbot](https://t.me/nexoramarketsbot)).
      - **CEOWEB**: Gamified social media showcase with challenge feed ([socialmediauz.netlify.app/challenges](https://socialmediauz.netlify.app/challenges)) and public code on GitHub.
      - **SAT MASTER**: AI-powered Digital SAT training Telegram Mini App with diagnostic remediation loop ([github.com/imceobitchuzb/newbot](https://github.com/imceobitchuzb/newbot)).
-     - **Telegram Trading & Automation Bot Engine**: High-throughput async bot architecture with audit reports ([github.com/imceobitchuzb/pockettgbot](https://github.com/imceobitchuzb/pockettgbot)).
+     - **CEOSAVDOUZ**: Trade and business automation SaaS platform with smart warehouse, POS cash register, and Telegram WebApp integration ([ceosavdouz.netlify.app](https://ceosavdouz.netlify.app) | [GitHub](https://github.com/imceobitchuzb/ceosavdouz)).
 
 4. **Honest Engineering Case Studies**:
    - Deep-dive architectural breakdowns covering real technical challenges, solutions, and verified outcomes without exaggerated metrics or fabricated claims.
