@@ -25,6 +25,7 @@ This repository contains the complete full-stack codebase:
 3. **Filterable Portfolio of Verified Builds**:
    - Filter by **Websites**, **Web Apps**, and **Automation**.
    - Clear and honest status indicators:
+     - **CEOBUILDING**: Exclusive presentation website for luxury residences in Tashkent City with interactive layout catalog ([ceobuilding.netlify.app](https://ceobuilding.netlify.app) | [GitHub](https://github.com/imceobitchuzb/ceobuilding)).
      - **NEXORA MARKET**: Live web store ([nexoramarketss.netlify.app](https://nexoramarketss.netlify.app)) + active Telegram Bot ([@nexoramarketsbot](https://t.me/nexoramarketsbot)).
      - **CEOWEB**: Gamified social media showcase with challenge feed ([socialmediauz.netlify.app/challenges](https://socialmediauz.netlify.app/challenges)) and public code on GitHub.
      - **SAT MASTER**: AI-powered Digital SAT training Telegram Mini App with diagnostic remediation loop ([github.com/imceobitchuzb/newbot](https://github.com/imceobitchuzb/newbot)).

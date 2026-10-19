@@ -2,6 +2,50 @@ import { Project } from '../types';
 
 export const projectsData: Project[] = [
   {
+    id: 'ceobuilding',
+    title: 'CEOBUILDING — Luxury Residences in Tashkent City',
+    category: 'websites',
+    status: 'live',
+    statusLabel: {
+      en: 'Live Platform',
+      ru: 'Работает онлайн',
+      uz: 'Onlayn ishlamoqda',
+    },
+    liveUrl: 'https://ceobuilding.netlify.app',
+    githubUrl: 'https://github.com/imceobitchuzb/ceobuilding',
+    summary: {
+      en: 'An exclusive quiet-luxury presentation website for a 14-story premium residential complex in Tashkent City with interactive layout plans.',
+      ru: 'Премиальный презентационный сайт клубного жилого комплекса в Tashkent City с интерактивным выбором резиденций и планировок.',
+      uz: 'Tashkent City hududidagi 14 qavatli premium klub uyi uchun sokin hashamat uslubidagi eksklyuziv taqdimot veb-sayti.',
+    },
+    description: {
+      en: 'CEOBUILDING showcases monumental architecture and private luxury in the heart of Tashkent City. The digital experience features an interactive floor and residence selector, panoramic views, architectural gallery, and quiet luxury typography.',
+      ru: 'CEOBUILDING представляет синтез монументальной архитектуры и приватной роскоши в сердце Tashkent City. Проект включает интерактивный каталог резиденций, поэтажные планировки, видовые террасы, японский сад и эстетику quiet luxury.',
+      uz: 'CEOBUILDING Tashkent City markazidagi monumental arxitektura va xususiy hashamatni namoyish etadi. Veb-sayt interaktiv xonadonlar tanlovi, qavatlar rejasi, manzarali terrasalar va yuqori darajadagi vizual estetikani o‘z ichiga oladi.',
+    },
+    technologies: ['HTML5', 'Modern CSS', 'JavaScript', 'Quiet Luxury Design', 'Responsive Web', 'Netlify CDN'],
+    highlights: {
+      en: [
+        'Live high-end residential showcase verified at ceobuilding.netlify.app',
+        'Verified open-source repository on GitHub (imceobitchuzb/ceobuilding)',
+        'Interactive residence selector and architectural layout catalog',
+        'Editorial typography pairing Cormorant Garamond with modern Inter sans-serif',
+      ],
+      ru: [
+        'Работающий презентационный сайт доступен на ceobuilding.netlify.app',
+        'Проверенный открытый репозиторий на GitHub (imceobitchuzb/ceobuilding)',
+        'Интерактивный выбор резиденций, планировок и галерея архитектуры',
+        'Эдиториал-типографика Cormorant Garamond и чистый современный Inter',
+      ],
+      uz: [
+        'ceobuilding.netlify.app manzilida ishlayotgan premium taqdimot sayti',
+        'GitHub-da tasdiqlangan ochiq repozitoriy (imceobitchuzb/ceobuilding)',
+        'Xonadonlar va qavatlar rejasini interaktiv tanlash tizimi',
+        'Cormorant Garamond va zamonaviy Inter shriftlari uyg‘unligi',
+      ],
+    },
+  },
+  {
     id: 'nexora-market',
     title: 'NEXORA MARKET',
     category: 'websites',

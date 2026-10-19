@@ -7,6 +7,7 @@ describe('IMCEO DEV Data and Business Logic Tests', () => {
   it('should load all verified projects', () => {
     expect(projectsData.length).toBeGreaterThanOrEqual(4);
     const ids = projectsData.map((p) => p.id);
+    expect(ids).toContain('ceobuilding');
     expect(ids).toContain('nexora-market');
     expect(ids).toContain('ceoweb-social');
     expect(ids).toContain('sat-master');
